@@ -2,18 +2,23 @@
 
 
 /* get the basic card information elements*/
+
 let formCreditCard = document.querySelector('#credit-card-formular');
 const cardNumber = document.querySelector('#card-number');
 const cvv = document.querySelector('#cvv');
 
+
 /* create an location reload for the reset button */
+
 const resetBtn = document.querySelector('#btn-res');
 
 resetBtn.addEventListener('click',()=>{
     location.reload();
 });
 
+
 /* get the drop down expiration date elements: */
+
 const selectYear = document.querySelector('#exp-date-year');
 const selectMonth = document.querySelector('#exp-date-month');
 
@@ -50,6 +55,7 @@ function dropYears(){
 dropYears();
 
 /* ↓ ensure that the user does not choose an invalid expiration date */
+
 const expMonth = document.querySelector('#exp-date-month');
 const expYear = document.querySelector('#exp-date-year');
 
@@ -75,7 +81,9 @@ expMonth.addEventListener('click', ()=>{
  * seperated functions below ::
 */
 
+
 /* :::: get the card-type option :::: */
+
 const cardSelect = document.querySelector('.card-choose');
 
 function cvvValid(){
@@ -209,7 +217,9 @@ function luhnValidate(){
             Please enter a valid card number!`;
             console.clear();}
 
+    
     /** get the numbers with a value >= 10 and calculate the checksum*/
+    
     function checksumNumbers(){
     
     for( let value of secondOfR ){
@@ -218,6 +228,7 @@ function luhnValidate(){
     
         let overTen = value;
         let sum = 0;
+        
         /* convert the numbers to a string for the checksum calculation */
         let xSplit = overTen.toString();
         
@@ -227,6 +238,7 @@ function luhnValidate(){
     
             checksumArray.push(sum);
         }
+        
         /* push all numbers < 10 in a seperate array */
         } else if ( value < 10) {
     
@@ -237,13 +249,16 @@ function luhnValidate(){
     function getNumbers(){
     
         /* get the input value */
+        
         let n = cardNumber.value;
     
         /* get the inputValue string.length to iterate correctly */
+        
         let cardL= n.length;
     
         /* iterate rewards over n.length(cardL) and log every second index */
         /* if cardNumber is even */
+        
         if(cardL % 2 === 0){
             for( let i = n.length -1; i >= 0; i-- ){
         
@@ -262,7 +277,7 @@ function luhnValidate(){
                 } else if(i%2 !== 0){
     
                     n.slice(i);
-                    let firstEven = (n[i]) * 1;  /* multiply 1 = changes the string values into numbers */
+                    let firstEven = (n[i]) * 1;     /* multiply 1 = changes the string values into numbers */
     
                     firstOfR.push(firstEven);
                   
@@ -292,10 +307,12 @@ function luhnValidate(){
     };  
     
     /* ::: summerize function for all arrays ::: */
+    
     function sumArray(array){
         return array.reduce((a, b) => a + b, 0);}
     
     /* slice out the real checksums out of checksumArray */
+    
     function getCheckNumberRight(x){
     
             for( let i = 0; i < x.length ; i++ ){
@@ -337,34 +354,37 @@ function sendForm(event){
     }
     formCreditCard.reset();
 
-    /* set an target for the formular submisson */
-    // let urlTarget = 'http://localhost:8000';
+    /** :: set an target for the formular submisson ::
+    *let urlTarget = 'http://localhost:8000';
 
-    // let request = new Request(urlTarget,{
-    //     body: formData,
-    //     method: 'Post'
-    // });
+    *let request = new Request(urlTarget,{
+    *    body: formData,
+    *    method: 'Post'
+    * }); */
 
-    /* response for the server with fetch/promise */
-    // fetch(request)
-    //     .then((response)=>response.json())
-    //     .then((data)=>console.log('server request: ' + data))
-       //formData.reset();
+    /** ::: response for the server with fetch/promise :::
+    * fetch(request)
+    *     .then((response)=>response.json())
+    *       .then((data)=>console.log('server request: ' + data))
+    *   formData.reset();  */
        
 };
 
 
-/* get the alerts */
+/* :: - get the alerts -:: */
+
 const alertWindow = document.querySelector('.alert-window');
 const alertModal = document.querySelector('#alert-dialog');
 const alertText = document.querySelector('#alert-text');
 
 /* close alert button */
+
 let closeAlert = document.querySelector('#close-alert');
 
 closeAlert.addEventListener('click', ()=>{
        console.clear()
        alertModal.close();
 })
+
 
 /* #:::≠$≠:::≠$≠:::≠$≠:::≠$≠::: -- end of credit card validation -- :::≠$≠:::≠$≠:::≠$≠:::≠$≠:::# */
