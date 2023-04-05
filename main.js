@@ -37,6 +37,7 @@ dropMonths();
 
 
 function dropYears(){
+    
 /**:: in the select box we will always start with the current year 
  * so the user can't use years of the past ::*/
 
@@ -46,7 +47,7 @@ function dropYears(){
         const optionYear = document.createElement('option');
         optionYear.innerText = yearDate + i;
         selectYear.appendChild(optionYear);
-        /* => max count till 10++ years thats enough for credit expiration ::*/
+             /* => max count till 10++ years thats enough for credit expiration ::*/
          if( i >= 10){
             break;
         }
@@ -218,7 +219,7 @@ function luhnValidate(){
             console.clear();}
 
     
-    /** get the numbers with a value >= 10 and calculate the checksum*/
+    /** get the numbers with a value >= 10 and calculate the checksum */
     
     function checksumNumbers(){
     
@@ -233,7 +234,7 @@ function luhnValidate(){
         let xSplit = overTen.toString();
         
         for( let i = 0; i < xSplit.length; i++){
-            /* re convert the strings to numbers and push them in a array*/
+            /* re convert the strings to numbers and push them in a array */
             sum = sum + parseFloat(xSplit[i]);
     
             checksumArray.push(sum);
@@ -264,7 +265,7 @@ function luhnValidate(){
         
                 if(i%2 === 0){
     
-                /* get the values of every 2nd index form String*/
+                /* get the values of every 2nd index form String */
                 n.slice(i);
     
                 /* (parse to number) and multiply by 2 */
@@ -355,9 +356,9 @@ function sendForm(event){
     formCreditCard.reset();
 
     /** :: set an target for the formular submisson ::
-    *let urlTarget = 'http://localhost:8000';
+    * let urlTarget = 'http://localhost:8000';
 
-    *let request = new Request(urlTarget,{
+    * let request = new Request(urlTarget,{
     *    body: formData,
     *    method: 'Post'
     * }); */
