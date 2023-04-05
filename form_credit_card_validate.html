@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit_Card_Validation</title>
+
+<link rel="stylesheet" href="credit_card_STYLE.css">
+
+</head>
+
+<!-- »:: $ :: credit card validation :: $ ::« -->
+
+<body>
+
+
+<!-- <<:$$:>> - the Validaton Formular - <<:$$:>>-->
+
+<section>
+
+        <!-- => name ! all elements here for the js FormData() interface -->
+
+<div class="container">
+
+    <form id="credit-card-formular">
+
+        <ul class="formular-list">
+
+            <li class="card-icons">
+                <label for="card-icon" id="card-icon-label">Confirm Purchase</label>
+                <br>
+                <select class="card-choose" name="card-brand" required>
+                    <option name="visa" id="visa-check" value="visacard">visacard</option>
+                    <option name="master" id="master-check" value="mastercard">mastercard</option>
+                    <option name="amex" id="amex-check" value="americanexpress">american express</option>
+                </select>
+                <br>
+                    <!-- <img class="card-icon" src="visa.png" width="12%" name="visa-card-icon"alt="visacard">
+                    <img class="card-icon" src="mastercard.png" width="12%" name="master-card-icon"alt="mastercard">
+                    <img class="card-icon" src="americanExpress.png" width="12%" name="american-express-card-icon"alt="americanexpress">   -->
+            </li>
+
+            <li class="li-items">
+                <label for="card-owner" id="label-cardowner">Card Owner :</label>
+                <input id="card-owner" class="input" type="text" name="card-owner: " value="" required placeholder="card-owner">
+            </li>
+
+            <li class="li-items">
+                <label for="card-number">Card Number :</label>
+                <input id="card-number" class="input" type="text" value="" required placeholder="card-number">
+            </li>
+
+            <li class="li-items">
+                <label for="cvv">cvv / cvc :</label>
+                <input id="cvv" type="text" value="" required placeholder="cvv">
+            </li>
+
+            <li class="li-items">
+                <p id="exp-date" name="exp-date-title">Expiration Date :</p>
+            </li>
+
+            <li class="li-items">
+                <label for="exp-date-year" id="label-year">Year :</label>
+                <select class="exp-date" id="exp-date-year" name="exp-year: " required placeholder="year" multiple></select>
+            </li>
+
+            <li class="li-items">
+                <label for="exp-date-month" id="label-month">Month :</label>
+                <select class="exp-date" id="exp-date-month" name="exp-month: " required placeholder="month" multiple></select>
+            </li>
+
+            <li>
+                <button type="submit" id="btn-send" name="card-send-btn">confirm</button>
+            </li>
+
+            <li>
+                <button type="reset" id="btn-res" name="card-res-btn">reset</button>
+            </li>
+
+        </ul>
+
+    </form>
+
+</div>
+
+<!-- :::::::::::::::::::::  -- >> formular - end <<  --  :::::::::::::::::::::::::::::: -->
+    
+</section>
+
+<!-- create alert modal for wrong user inputs -->
+
+<dialog id="alert-dialog">
+
+     <button id="close-alert">X</button>
+     <p id="alert-text"></p>
+
+</dialog>
+   
+
+<script src="main.js"></script>
+
+</body>
+</html>
