@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credit_Card_Validation</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <!-- »:: $ :: credit card validation :: $ ::« -->
 
 <body>
-
 
 <!-- << the Validaton Formular >>-->
 
@@ -24,11 +19,8 @@
 <!-- :: name ! all elements for js FormData() interface :: -->
 
 <div class="container">
-
     <form id="credit-card-formular">
-
         <ul class="formular-list">
-
             <li class="card-icons">
                 <label for="card-icon" id="card-icon-label">Confirm Purchase</label>
                 <br>
@@ -45,20 +37,35 @@
         <img class="card-icon" src=" " width="12%" name="american-express-card-icon"alt="americanexpress">   -->
                 
             </li>
-
             <li class="li-items">
                 <label for="card-owner" id="label-cardowner">Card Owner :</label>
-                <input id="card-owner" class="input" type="text" name="card-owner: " value="" required placeholder="card-owner">
+                <input id="card-owner"
+                    class="input" 
+                    type="text" 
+                    name="card-owner: " 
+                    value="" 
+                    autocomplete="off"
+                    required placeholder="card-owner">
             </li>
 
             <li class="li-items">
                 <label for="card-number">Card Number :</label>
-                <input id="card-number" class="input" type="text" value="" required placeholder="card-number">
+                <input 
+                    id="card-number" 
+                    class="input" 
+                    type="text" 
+                    value="" 
+                    autocomplete="off"
+                    required placeholder="card-number">
             </li>
 
             <li class="li-items">
                 <label for="cvv">cvv / cvc :</label>
-                <input id="cvv" type="text" value="" required placeholder="cvv">
+                <input 
+                    id="cvv" 
+                    type="text" 
+                    value="" 
+                    required placeholder="cvv">
             </li>
 
             <li class="li-items">
@@ -67,12 +74,23 @@
 
             <li class="li-items">
                 <label for="exp-date-year" id="label-year">Year :</label>
-                <select class="exp-date" id="exp-date-year" name="exp-year: " required placeholder="year" multiple></select>
+                <select 
+                    class="exp-date" 
+                    id="exp-date-year" 
+                    name="exp-year: " 
+                    required placeholder="year" 
+                    multiple></select>
             </li>
 
             <li class="li-items">
                 <label for="exp-date-month" id="label-month">Month :</label>
-                <select class="exp-date" id="exp-date-month" name="exp-month: " required placeholder="month" multiple></select>
+                <select 
+                    class="exp-date" 
+                    id="exp-date-month" 
+                    name="exp-month: " 
+                    required 
+                    placeholder="month" 
+                    multiple></select>
             </li>
 
             <li>
@@ -82,27 +100,20 @@
             <li>
                 <button type="reset" class="button" id="btn-res" name="card-res-btn">reset</button>
             </li>
-
         </ul>
-
     </form>
-
 </div>
 
 <!-- :: >> formular - end << :: -->
     
 </section>
 
-    
 <!-- :::: ALert Modals :::: -->
 
     <dialog id="alert-dialog">
-
         <button id="close-alert">X</button>
         <p id="alert-text"></p>
-   
    </dialog>
-
 
 <script src="main.js"></script>
 
